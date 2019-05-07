@@ -12,11 +12,16 @@
 </head>
 
 <body>
-  <form id="main-form" action="/upload_json" method="POST">
-    <textarea rows="6" cols="100" name="json"></textarea>
+  <form id="main-form" action="/upload_text" method="POST">
+    <textarea rows="10" cols="100" name="json_text"></textarea>
     <button id="submit-btn" type="submit">SUBMIT</button>
   </form>
 
+  <form id="file-picker" action="/upload_json" enctype="multipart/form-data" method="POST">
+    <label for="filePicker">select a json file to upload</label>
+    <input type="file" id="filePicker" name="jsonUpload" accept="application/json">
+    <input type="submit" value="Submit">
+  </form>
 </body>
 
 </html>
