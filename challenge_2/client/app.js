@@ -9,9 +9,11 @@ $('#main-form').on('submit', (e) => {
     success: (data) => {
       var blob = new Blob([data]);
       var link = document.createElement('a');
+      link.innerText = 'download most recent csv file';
+      $('body').append(link);
       link.href = window.URL.createObjectURL(blob);
       link.download = "default.csv";
-      link.click();
+      //link.click();
     }
   });
 });
@@ -33,9 +35,12 @@ $('#file-picker').on('submit', (e) => {
       console.log('uploaded file successfully');
       var blob = new Blob([data]);
       var link = document.createElement('a');
+
+      link.innerText = 'download most recent csv file';
+      $('body').append(link);
       link.href = window.URL.createObjectURL(blob);
       link.download = "default.csv";
-      link.click();
+      //link.click();
     }
   });
 });
