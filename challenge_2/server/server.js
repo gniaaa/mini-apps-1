@@ -7,11 +7,11 @@ const port = 3000;
 const upload = multer();
 
 app.use(bodyParser.json());    // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true }));   // for parsing application/x-www-form-urlencoded
+//app.use(bodyParser.urlencoded({ extended: true }));   // for parsing application/x-www-form-urlencoded
 
 app.use(express.static('client'));
 
-app.post('/upload_json', upload.single('jsonUpload'), (req, res, next) => {
+app.post('/upload_json', upload.single('filePicker_json'), (req, res, next) => {
   var data = JSON.parse(String(req.file.buffer));
   var csv = parseIntoCSV(data);
 
@@ -21,8 +21,7 @@ app.post('/upload_json', upload.single('jsonUpload'), (req, res, next) => {
 });
 
 app.post('/upload_text', (req, res, next) => {
-  var data = JSON.parse(req.body.json_text);
-  var csv = parseIntoCSV(data);
+  var csv = parseIntoCSV(req.body);
 
   res.setHeader('Content-disposition', 'attachment; filename=default.csv');
   res.set('Content-type', 'text/csv');
