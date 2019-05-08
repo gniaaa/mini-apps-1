@@ -8,9 +8,14 @@ $('#main-form').on('submit', (e) => {
     contentType: 'application/json',
     success: (data) => {
       var blob = new Blob([data]);
-      var link = document.createElement('a');
-      link.innerText = 'download most recent csv file';
-      $('body').append(link);
+      if (!document.getElementById('download-link')) {
+        var link = document.createElement('a');
+        link.id = 'download-link';
+        link.innerText = 'download most recent csv file';
+        $('body').append(link);
+      } else {
+        var link = document.getElementById('download-link');
+      }
       link.href = window.URL.createObjectURL(blob);
       link.download = "default.csv";
       //link.click();
@@ -34,10 +39,14 @@ $('#file-picker').on('submit', (e) => {
     success: (data) => {
       console.log('uploaded file successfully');
       var blob = new Blob([data]);
-      var link = document.createElement('a');
-
-      link.innerText = 'download most recent csv file';
-      $('body').append(link);
+      if (!document.getElementById('download-link')) {
+        var link = document.createElement('a');
+        link.id = 'download-link';
+        link.innerText = 'download most recent csv file';
+        $('body').append(link);
+      } else {
+        var link = document.getElementById('download-link');
+      }
       link.href = window.URL.createObjectURL(blob);
       link.download = "default.csv";
       //link.click();
