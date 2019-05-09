@@ -5,7 +5,7 @@ module.exports = {
   watch: true,
   entry: './components/app.jsx',
   output: {
-    path: path.resolve(--__dirname, '../public'),
+    path: path.resolve(__dirname, '../public'),
     filename: 'bundle.js'
   },
   module: {
