@@ -11,8 +11,10 @@
   "author": "eugenia",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "mysql": "^2.17.1",
+    "mysql2": "^1.6.5",
     "nodemon": "^1.19.0",
     "sequelize": "^5.8.5"
   }

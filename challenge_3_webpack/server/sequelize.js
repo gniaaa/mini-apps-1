@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('multistep-checkout', 'root', 'eugenia', {
+const sequelize = new Sequelize('checkout', 'root', 'eugenia', {
   host: 'localhost',
   dialect: 'mysql'
 })
@@ -47,11 +47,11 @@ const Address = sequelize.define('address', {
     allowNull: false
   },
   zipcode: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false
   },
   phoneNumber: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false
   }
 });
@@ -63,27 +63,26 @@ const Payment = sequelize.define('payment', {
     autoIncrement: true
   },
   creditCardNumber: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false
   },
   expiryMonth: {
-    type: Sequelize.DATE,
+    type: Sequelize.STRING,
     allowNull: false
   },
   expiryYear: {
-    type: Sequelize.DATE,
+    type: Sequelize.STRING,
     allowNull: false
   },
   cvv: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false
   },
   billingZipcode: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false
   }
 });
-
 
 User.hasMany(Address);
 User.hasMany(Payment);
