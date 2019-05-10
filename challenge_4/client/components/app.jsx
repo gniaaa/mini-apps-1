@@ -19,7 +19,7 @@ class App extends React.Component {
     // this.checkValidMove = this.checkValidMove.bind(this);
     // this.getCurrentRow = this.getCurrentRow.bind(this);
     // this.updateBoard = this.updateBoard.bind(this);
-    // this.checkWin = this.checkWin.bind(this);
+    this.checkWin = this.checkWin.bind(this);
     // this.updateCols = this.updateCols.bind(this);
     // this.updateTurn = this.updateTurn.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -117,13 +117,14 @@ class App extends React.Component {
     }
 
     const checkMaj = (row, col) => {
+
       var sum = 1;
       var u = row;
       var l = col;
       while (u + 1 < 6 && l - 1 >= 0 && this.state.board[u + 1][l - 1] === player) {
         sum++;
         u++;
-        l++;
+        l--;
       }
       var d = row;
       var r = col;
