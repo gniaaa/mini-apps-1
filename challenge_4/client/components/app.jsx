@@ -216,7 +216,7 @@ class App extends React.Component {
           })}
         </div>
         <div id="board">{this.displayBoard()}</div>
-        <div id="turn">current player: {this.state.currentPlayer}</div>
+        <div id="turn" className={`${this.state.currentPlayer}-font`}>current player: {this.state.currentPlayer}</div>
         <div id="btn"><button id="newgame-btn" onClick={this.restartGame}>START NEW GAME</button></div>
       </div>
     );

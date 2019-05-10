@@ -90,6 +90,14 @@ current turn
   text-align: center;
 }
 
+.red-font {
+  color: #ff2e63;
+}
+
+.blue-font {
+  color: #08d9d6;
+}
+
 /* =========================
 start new game
 ===========================*/
