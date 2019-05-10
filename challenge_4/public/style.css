@@ -3,6 +3,7 @@
   width: 560px;
   text-align: center;
   font-size: 16px;
+  color: #252a34;
 }
 
 body {
@@ -35,11 +36,11 @@ insertion column
 }
 
 .blue-insert:hover{
-  background:blue;
+  background:#08d9d6;
 }
 
 .red-insert:hover{
-  background:red;
+  background: #ff2e63;
 }
 
 /* =========================
@@ -53,13 +54,13 @@ connect four board
   display: grid;
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: repeat(7, 1fr); 
-  border: 1px solid black;
+  border: 1px solid #252a34;
   border-radius: 5px;
 }
 
 
 .tile {
-  border: 0.5px solid black;
+  border: 0.5px solid #252a34;
 }
 
 .red-piece, .blue-piece {
@@ -71,11 +72,11 @@ connect four board
 }
 
 .red-piece {
-  background: red;
+  background: #ff2e63;
 }
 
 .blue-piece {
-  background: blue;
+  background:#08d9d6;
 }
 
 /* =========================
@@ -101,13 +102,19 @@ start new game
 }
 
 #newgame-btn {
-  border: 1px solid darkgrey;
+  width: 150px;
+  height: 20px;
+  background: white;
+  color: #252a34;
+  border: 1px solid #252a34;
   border-radius: 5px;
 }
 
 #newgame-btn:hover {
-  background: darkgrey;
-  color: white
+  background: #ff2e63;
+  color: white;
+  border: none;
+
 }
 
 /* =========================

@@ -44,7 +44,8 @@ class App extends React.Component {
     let newCols = this.createEmptyColumns();
     this.setState({
       board: newBoard,
-      columns: newCols
+      columns: newCols,
+      currentPlayer: 'red'
     })
   }
 
